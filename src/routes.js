@@ -18,6 +18,9 @@ const FileController = require('./app/controllers/FileController')
 const AppointmentController = require('./app/controllers/AppointmentController')
 const AvailableController = require('./app/controllers/AvailableController')
 
+// Desafio
+const AgendaController = require('./app/controllers/AgendaController')
+
 // Variavel global para que todas as views saibam
 routes.use((req, res, next) => {
   res.locals.flashSucces = req.flash('success')
@@ -46,5 +49,8 @@ routes.get('/app/appointments/new/:provider', AppointmentController.create)
 routes.post('/app/appointments/new/:provider', AppointmentController.store)
 
 routes.get('/app/availables/:provider', AvailableController.index)
+
+// Desafio
+routes.get('/app/agenda', AgendaController.index)
 
 module.exports = routes

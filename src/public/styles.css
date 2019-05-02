@@ -290,3 +290,46 @@ ul.providers {
 .main-wrapper .content form button:hover {
   background: #634dac;
 }
+
+/* Styles Desafio */
+.main-wrapper .content a.show {
+  background: #7159c1;
+  text-decoration: none;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  border: 0;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.main-wrapper .content a.show:hover {
+  opacity: 0.5;
+}
+
+#agenda-datas {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+#agenda-datas label {
+  display: flex;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+#agenda-datas input {
+  margin: 0;
+  height: auto;
+  padding: 0;
+  margin-right: 5px;
+}

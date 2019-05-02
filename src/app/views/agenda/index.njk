@@ -1,0 +1,24 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+  <div class="content">
+    <strong>Seus Horarios</strong>
+    <div id="agenda-datas">
+
+      <ul>
+        {% for horario in agenda %}
+
+          <li class="provider">
+            <div>
+              <img src="/files/{{ horario.User.avatar }}"/>
+              <strong>{{ horario.User.name }}</strong>
+            </div>
+            <strong>{{ horario.date | date("DD/MM/YY, HH:mm" )}}</strong>
+          </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+    <a href="/app/dashboard" class="show">Voltar</a>
+  </div>
+{% endblock %}

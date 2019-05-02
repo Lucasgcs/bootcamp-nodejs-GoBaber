@@ -1,10 +1,14 @@
 {% extends "_layouts/default.njk" %}
 
-{%block body %}
+{% block body %}
   <div class="content">
     <strong>Olá, {{ user.name }}</strong>
 
     <p>Incie um agendamento escolhendo um profissional abaixo</p>
+
+    {% if user.provider%}
+     <a href="/app/agenda" class="show">Ver Agenda</a>
+    {% endif %}
 
     <ul>
       {% for provider in providers %}

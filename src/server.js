@@ -14,6 +14,9 @@ const path = require('path')
 // necessário para enviar mensagens de erro ao usuário
 const flash = require('connect-flash')
 
+// Desafio - Filtro de Data para nunjucks
+const dataFiltro = require('nunjucks-date-filter')
+
 // Sintaxe que é mais fácil para organizar
 class App {
   constructor () {
@@ -47,12 +50,15 @@ class App {
   }
 
   views () {
-    nunjucks.configure(path.resolve(__dirname, 'app', 'views'), {
+    const env = nunjucks.configure(path.resolve(__dirname, 'app', 'views'), {
       // Só ira assitir alterações se o ambiente for DEV
       watch: this.isDev,
       express: this.express,
       autoescape: true
     })
+
+    // Filtro de data
+    env.addFilter('date', dataFiltro)
 
     // Informa onde está a pasta com arquivos estaticos
     this.express.use(express.static(path.resolve(__dirname, 'public')))
